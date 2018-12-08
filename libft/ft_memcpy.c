@@ -8,8 +8,11 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
 
 	s1 = (char *)dest;
 	s2 = (char *)src;
-	i = -1;
-	while(s1 && s2 && ++i < n)
+	i = 0;
+	while(i < n)
+	{
 		s1[i] = s2[i];
-	return((void *)dest);
+		i++;
+	}
+	return(dest);
 }

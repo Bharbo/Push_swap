@@ -3,16 +3,16 @@
 char	*ft_strstr(char *str, char *find)
 {
 	int i;
-	int find_i;
+	int fi;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
-		find_i = 0;
-		while (str[i + find_i] == find[find_i])
+		fi = 0;
+		while (str[i + fi] == find[fi])
 		{
-			find_i++;
-			if (find[find_i] == '\0')
+			fi++;
+			if (find[fi] == '\0')
 				return (&str[i]);
 		}
 		i++;

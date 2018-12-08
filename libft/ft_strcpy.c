@@ -1,11 +1,15 @@
 #include "libft.h"
 
-char *ft_strcpy(char *s1, const char *s2)
+char	*ft_strcpy(char *dest, const char *src)
 {
-	int i;
+	unsigned int i;
 
-	i = -1;
-	while (s2[++i])
-		s1[i] = s2[i];
-	return (s1);
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = src[i];
+	return (dest);
 }

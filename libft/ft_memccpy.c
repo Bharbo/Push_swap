@@ -11,9 +11,11 @@ void *ft_memccpy(void *dest, const void *src, int c, size_t n)
 	s2 = (char *)src;
 	let = (char)c;
 	i = -1;
-	while(++i < n && let != s2[i])
+	while(++i < n)
+	{
 		s1[i] = s2[i];
-	if(let == s2[i])
-		return(NULL);
-	return((void *)dest);
+		if(let == s2[i])
+			return((void *)s1 + i + 1);
+	}
+	return(NULL);
 }
