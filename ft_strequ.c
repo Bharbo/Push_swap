@@ -9,4 +9,5 @@ int	ft_strequ(char const *s1, char const *s2)
 		else
 			return (0);
 	}
+	return (0);
 }

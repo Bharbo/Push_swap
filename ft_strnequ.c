@@ -9,4 +9,5 @@ int	ft_strnequ(char const *s1, char const *s2, size_t n)
 		else
 			return (0);
 	}
+	return (0);
 }

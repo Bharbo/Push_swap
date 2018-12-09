@@ -1,8 +1,6 @@
 #ifndef	LIBFT_H
 # define LIBFT_H
 # define IS_SPACE(x) (x == ' ' || x == '\t' || x == '\r' || x == '\f' || x == '\n' || x == '\v')
-//# define LONG_MIN
-//# define LONG_MAX
 #include <string.h>
 #include <unistd.h>
 #include <stdlib.h>

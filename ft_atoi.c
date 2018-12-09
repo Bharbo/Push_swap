@@ -2,7 +2,7 @@
 
 int	ft_atoi(const char *str)
 {
-	unsigned long value;
+	int value;
 	int sign;
 
 	value = 0;
@@ -21,8 +21,8 @@ int	ft_atoi(const char *str)
 	{
 		value = value * 10;
 		value = value + (*str - '0');
-		if(value < 0)
-			return (int)(sign == 1 ? 0 : -1);
+//		if(value < 0)
+//			return (int)(sign == 1 ? 0 : -1);
 		str++;
 	}
 	return (value * sign);
