@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: blanna <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/12/11 16:36:44 by blanna            #+#    #+#             */
+/*   Updated: 2018/12/11 17:07:12 by blanna           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 long int	abs_int(long int n)
 {
-	if(n < 0)
+	if (n < 0)
 		return (-n);
 	else
 		return (n);
@@ -13,7 +25,7 @@ static int	int_len(int n)
 	int len;
 
 	len = 0;
-	if(n <= 0)
+	if (n <= 0)
 		len = 1;
 	else
 		len = 0;
@@ -25,19 +37,19 @@ static int	int_len(int n)
 	return (len);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
-	char        *str;
-	int			len;
-	int			sign;
+	char	*str;
+	int		len;
+	int		sign;
 
 	len = int_len(n);
-	if(n < 0)
+	if (n < 0)
 		sign = -1;
 	else
 		sign = 1;
 	str = ft_strnew(len);
-	if(!str)
+	if (!str)
 		return (0);
 	str[len] = '\0';
 	len = len - 1;

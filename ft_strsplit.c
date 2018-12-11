@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: blanna <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/12/11 16:46:05 by blanna            #+#    #+#             */
+/*   Updated: 2018/12/11 19:10:02 by blanna           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	wordlen(char const *str, char c)
 {
-	int	len;
+	int		len;
 
 	len = 0;
 	while (*str == c)
@@ -15,9 +27,9 @@ static int	wordlen(char const *str, char c)
 	return (len);
 }
 
-int	wordcount(char const *str, char c)
+int			wordcount(char const *str, char c)
 {
-	int count;
+	int		count;
 
 	count = 0;
 	while (*str)
@@ -32,14 +44,16 @@ int	wordcount(char const *str, char c)
 	return (count);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char		**ft_strsplit(char const *s, char c)
 {
 	int		k;
 	int		i;
 	int		j;
 	char	**part2;
 
-	if ((!s) || (!(part2 = (char **)malloc(sizeof(*part2) * (wordcount(s, c) + 1)))))
+	if (!s)
+		return (0);
+	if (!(part2 = (char **)malloc(sizeof(*part2) * (wordcount(s, c) + 1))))
 		return (0);
 	i = 0;
 	k = 0;
@@ -51,11 +65,7 @@ char	**ft_strsplit(char const *s, char c)
 		while (s[k] == c)
 			k++;
 		while (s[k] != c && s[k] != '\0')
-		{
-			part2[i][j] = s[k];
-			j++;
-			k++;
-		}
+			part2[i][j++] = s[k++];
 		part2[i][j] = '\0';
 		i++;
 	}

@@ -1,29 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: blanna <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/12/11 16:34:20 by blanna            #+#    #+#             */
+/*   Updated: 2018/12/11 21:47:14 by blanna           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *s)
 {
-	int value;
-	int sign;
+	long long int	value;
+	int				sign;
 
 	value = 0;
 	sign = 1;
-	while(IS_SPACE(*str))
-		++str;
-	if(*str == '+' || *str == '-')
+	while (*s == ' ' || *s == '\t' || *s == '\r' \
+			|| *s == '\f' || *s == '\v' || *s == '\n')
+		++s;
+	if (*s == '+' || *s == '-')
 	{
-		if(*str == '-')
+		if (*s == '-')
 			sign = -1;
-		else
-			sign = 1;
-		str++;
+		s++;
 	}
-	while(ft_isdigit(*str))
+	while (ft_isdigit(*s))
 	{
 		value = value * 10;
-		value = value + (*str - '0');
-//		if(value < 0)
-//			return (int)(sign == 1 ? 0 : -1);
-		str++;
+		value = value + (*s - '0');
+		if (value < 0)
+			return (sign == 1 ? -1 : 0);
+		s++;
 	}
 	return (value * sign);
 }
