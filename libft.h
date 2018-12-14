@@ -6,7 +6,7 @@
 /*   By: blanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 19:05:56 by blanna            #+#    #+#             */
-/*   Updated: 2018/12/11 20:23:41 by blanna           ###   ########.fr       */
+/*   Updated: 2018/12/14 17:38:44 by blanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,12 @@ char	*ft_strcpy(char *s1, const char *s2);
 char	*ft_strdup(const char *src);
 char	*ft_strncpy(char *s1, const char *s2, size_t n);
 size_t	ft_strlen(const char *str);
-int		main();
 char	*ft_strstr(char *str, char *find);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strncat(char *dest, const char *src, size_t n);
 char	*ft_strchr(const char *s, int c);
 size_t	ft_strlcat(char *dest, const char *src, size_t n);
-char	*ft_strnstr(const char *str, const char *find, size_t nstr);
+char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_isdigit(int c);
 int		ft_isalpha(int c);

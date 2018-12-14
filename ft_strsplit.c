@@ -6,7 +6,7 @@
 /*   By: blanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 16:46:05 by blanna            #+#    #+#             */
-/*   Updated: 2018/12/11 19:10:02 by blanna           ###   ########.fr       */
+/*   Updated: 2018/12/14 20:52:37 by blanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,56 +19,65 @@ static int	wordlen(char const *str, char c)
 	len = 0;
 	while (*str == c)
 		str++;
-	while (*str != c && *str != '\0')
-	{
-		str++;
+	while (*str++ != c && *str != '\0')
 		len++;
-	}
 	return (len);
 }
 
-int			wordcount(char const *str, char c)
+static char	*wordcount(char const *str, char c)
 {
-	int		count;
+	size_t	count;
+	char	*part2;
 
 	count = 0;
+	if (!str)
+		return (NULL);
+	while (str[count] != c && str[count] != '\0')
+		count++;
+	if (!(part2 = (char *)malloc(sizeof(char) * (count + 1))))
+		return (0);
+	count = 0;
+	while (*str && *str != c)
+	{
+		part2[count++] = *str;
+		str++;
+	}
+	part2[count] = '\0';
+	return (part2);
+}
+
+static void	ft_free(char **array, int len)
+{
+	while (--len > -1)
+		free(array[len]);
+	free(array);
+}
+
+char			**ft_strsplit(char const *str, char c)
+{
+	char	**part2;
+	size_t	i;
+
+	if (!str || !(part2 = (char **)malloc(sizeof(char *)\
+					* (wordlen(str, c) + 1))))
+		return (NULL);
+	i = 0;
 	while (*str)
 	{
 		while (*str == c)
 			str++;
-		if (*str != c && *str != '\0')
-			count++;
-		while (*str != c && *str != '\0')
-			str++;
+		if (*str != c && *str)
+		{
+			if (!(part2[i++] = wordcount(str, c)))
+			{
+				ft_free(part2, --i);
+				free(part2);
+				return (NULL);
+			}
+			while (*str != c && *str)
+				str++;
+		}
 	}
-	return (count);
-}
-
-char		**ft_strsplit(char const *s, char c)
-{
-	int		k;
-	int		i;
-	int		j;
-	char	**part2;
-
-	if (!s)
-		return (0);
-	if (!(part2 = (char **)malloc(sizeof(*part2) * (wordcount(s, c) + 1))))
-		return (0);
-	i = 0;
-	k = 0;
-	while (i < wordcount(s, c))
-	{
-		j = 0;
-		if (!(part2[i] = ft_memalloc(wordlen(&s[k], c) + 1)))
-			part2[i] = 0;
-		while (s[k] == c)
-			k++;
-		while (s[k] != c && s[k] != '\0')
-			part2[i][j++] = s[k++];
-		part2[i][j] = '\0';
-		i++;
-	}
-	part2[i] = 0;
+	part2[i] = NULL;
 	return (part2);
 }
