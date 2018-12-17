@@ -6,7 +6,7 @@
 /*   By: blanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 16:37:12 by blanna            #+#    #+#             */
-/*   Updated: 2018/12/11 19:07:24 by blanna           ###   ########.fr       */
+/*   Updated: 2018/12/15 17:48:04 by blanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	{
 		s1[i] = s2[i];
 		if (let == s2[i])
-			return ((void *)s1 + i + 1);
+			return (dest + i + 1);
 	}
 	return (NULL);
 }

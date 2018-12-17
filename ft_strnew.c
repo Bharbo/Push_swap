@@ -6,7 +6,7 @@
 /*   By: blanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 16:45:11 by blanna            #+#    #+#             */
-/*   Updated: 2018/12/12 19:43:01 by blanna           ###   ########.fr       */
+/*   Updated: 2018/12/15 19:14:33 by blanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,7 @@ char	*ft_strnew(size_t size)
 	if (size == (size_t)(-1))
 		return (0);
 	str = ft_memalloc(size + 1);
+	if (!str)
+		return (0);
 	return (str);
 }

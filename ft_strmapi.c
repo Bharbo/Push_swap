@@ -6,7 +6,7 @@
 /*   By: blanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 16:44:20 by blanna            #+#    #+#             */
-/*   Updated: 2018/12/11 18:19:48 by blanna           ###   ########.fr       */
+/*   Updated: 2018/12/15 18:56:59 by blanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (!s || !f)
 		return (0);
 	dest = ft_strnew(ft_strlen(s));
-	while (s[i])
+	while (s[i] && f)
 	{
 		if (!dest)
 			return (0);

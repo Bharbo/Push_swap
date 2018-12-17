@@ -6,7 +6,7 @@
 /*   By: blanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 19:05:56 by blanna            #+#    #+#             */
-/*   Updated: 2018/12/14 17:38:44 by blanna           ###   ########.fr       */
+/*   Updated: 2018/12/17 17:17:36 by blanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_strcpy(char *s1, const char *s2);
 char	*ft_strdup(const char *src);
 char	*ft_strncpy(char *s1, const char *s2, size_t n);
 size_t	ft_strlen(const char *str);
-char	*ft_strstr(char *str, char *find);
+char	*ft_strstr(const char *str, const char *find);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strncat(char *dest, const char *src, size_t n);
 char	*ft_strchr(const char *s, int c);
@@ -45,8 +45,6 @@ int		ft_isprint(int c);
 int		ft_isascii(int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-int		ft_isupper(int c);
-int		ft_islower(int c);
 int		ft_atoi(const char *str);
 void	ft_putchar(char c);
 void	ft_putchar_fd(char c, int fd);
@@ -72,5 +70,9 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char const *s, char c);
 char	*ft_itoa(int n);
+int		ft_isupper(int c);
+int		ft_islower(int c);
+void	ft_putnstr(char *s, size_t n);
+char	*ft_strnchr(const char *s, int c, size_t n);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: blanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 16:38:24 by blanna            #+#    #+#             */
-/*   Updated: 2018/12/12 16:59:34 by blanna           ###   ########.fr       */
+/*   Updated: 2018/12/15 19:10:09 by blanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 
 	s1 = (char *)dst;
 	s2 = (char *)src;
+	if (dst == src)
+		return (dst);
 	if (dst < src)
 	{
 		i = -1;
@@ -32,5 +34,5 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 			n--;
 			s1[n] = s2[n];
 		}
-	return ((void *)dst);
+	return (dst);
 }

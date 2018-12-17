@@ -6,7 +6,7 @@
 /*   By: blanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 16:44:08 by blanna            #+#    #+#             */
-/*   Updated: 2018/12/11 17:14:50 by blanna           ###   ########.fr       */
+/*   Updated: 2018/12/15 18:55:50 by blanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	if (!s || !f)
 		return (0);
 	dest = ft_strnew(ft_strlen(s));
-	while (s[i])
+	while (s[i] && f)
 	{
 		if (!dest)
 			return (0);

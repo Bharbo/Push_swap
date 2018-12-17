@@ -6,22 +6,31 @@
 /*   By: blanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 16:46:05 by blanna            #+#    #+#             */
-/*   Updated: 2018/12/14 20:52:37 by blanna           ###   ########.fr       */
+/*   Updated: 2018/12/15 17:38:30 by blanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	wordlen(char const *str, char c)
+static int	wordlen(const char *str, char c)
 {
-	int		len;
+	int	count;
+	int	i;
 
-	len = 0;
-	while (*str == c)
+	i = 0;
+	count = 0;
+	while (*str)
+	{
+		if (*str != c && i == 0)
+		{
+			i = 1;
+			count++;
+		}
+		if (*str == c && i == 1)
+			i = 0;
 		str++;
-	while (*str++ != c && *str != '\0')
-		len++;
-	return (len);
+	}
+	return (count);
 }
 
 static char	*wordcount(char const *str, char c)
@@ -53,7 +62,7 @@ static void	ft_free(char **array, int len)
 	free(array);
 }
 
-char			**ft_strsplit(char const *str, char c)
+char		**ft_strsplit(char const *str, char c)
 {
 	char	**part2;
 	size_t	i;

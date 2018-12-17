@@ -6,7 +6,7 @@
 /*   By: blanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 16:43:18 by blanna            #+#    #+#             */
-/*   Updated: 2018/12/11 17:14:02 by blanna           ###   ########.fr       */
+/*   Updated: 2018/12/15 19:01:16 by blanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 
 	i = 0;
 	if (s && f)
-		while (*s != '\0')
+		while (*s && f)
 		{
 			f(i, s);
 			s++;

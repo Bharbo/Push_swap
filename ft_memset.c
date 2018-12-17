@@ -6,7 +6,7 @@
 /*   By: blanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 16:38:36 by blanna            #+#    #+#             */
-/*   Updated: 2018/12/11 16:38:37 by blanna           ###   ########.fr       */
+/*   Updated: 2018/12/15 17:57:58 by blanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ void	*ft_memset(void *b, int c, size_t len)
 	char	*ar;
 	size_t	i;
 
-	ar = b;
+	ar = (char *)b;
 	i = 0;
 	while (i < len)
 	{
-		ar[i] = c;
+		ar[i] = (char)c;
 		i++;
 	}
 	return (b);
