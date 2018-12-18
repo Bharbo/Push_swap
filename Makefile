@@ -5,13 +5,6 @@ OBJ			= $(FILES:%.c=%.o)
 
 all: $(NAME)
 
-so:
-	gcc -shared -o libft.so -fPIC $(FILES)
-
-copy:
-	cp -f libft/*.c .
-	cp -f PATR2/*.c .
-
 $(NAME):
 	gcc $(CFLAGS) $(FILES)
 	ar rc $(NAME) $(OBJ)
