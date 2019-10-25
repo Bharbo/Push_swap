@@ -1,9 +1,5 @@
 #include "push_swap.h"
 
-/*
-** разделение стэка по pivot.
-** возврат - размер разделяемого массива
-*/ 
 int			ft_partition(t_ps *data, int size, char stack)
 {
 	int	pivot;
