@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_islower.c                                       :+:      :+:    :+:   */
+/*   add_flags3.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blanna <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: blanna <blanna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/11 16:36:07 by blanna            #+#    #+#             */
-/*   Updated: 2018/12/11 17:00:44 by blanna           ###   ########.fr       */
+/*   Created: 2019/06/13 01:40:23 by blanna            #+#    #+#             */
+/*   Updated: 2019/06/13 01:40:53 by blanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_islower(int c)
+char	*ft_pres_norm(t_printf *data, char *str, int prec)
 {
-	if (c >= 'a' && c <= 'z')
-		return (1);
-	else
-		return (0);
+	if ((data->tp[0] == 'o' && data->sh) || prec == -1)
+		return (str);
+	*str = 0;
+	return (str);
 }

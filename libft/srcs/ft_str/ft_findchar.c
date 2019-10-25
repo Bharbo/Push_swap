@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp2.c                                       :+:      :+:    :+:   */
+/*   ft_findchar.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: blanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/11 17:11:06 by blanna            #+#    #+#             */
-/*   Updated: 2018/12/11 17:12:15 by blanna           ###   ########.fr       */
+/*   Created: 2018/12/11 16:34:20 by blanna            #+#    #+#             */
+/*   Updated: 2018/12/15 18:51:07 by blanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+int		ft_findchar(char *str, int c)
 {
-	while (*s1 == *s2)
+	int	i;
+
+	i = 0;
+	while (str[i])
 	{
-		if (*s1 == '\0')
-			return (0);
-		s1++;
-		s2++;
+		if (str[i] == (char)c)
+			return (i + 1);
+		i++;
 	}
-	return ((unsigned char)*s1 - (unsigned char)*s2);
+	if (str[i] == (char)c)
+		return (i + 1);
+	return (0);
 }

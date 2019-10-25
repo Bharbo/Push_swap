@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: blanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,29 +12,11 @@
 
 #include "libft.h"
 
-int	ft_atoi(const char *s)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	long long int	value;
-	int				sign;
-
-	value = 0;
-	sign = 1;
-	while (*s == ' ' || *s == '\t' || *s == '\r' \
-			|| *s == '\f' || *s == '\v' || *s == '\n')
-		++s;
-	if (*s == '+' || *s == '-')
+	if (new != NULL && alst != NULL)
 	{
-		if (*s == '-')
-			sign = -1;
-		s++;
+		new->next = *alst;
+		*alst = new;
 	}
-	while (ft_isdigit(*s))
-	{
-		value = value * 10;
-		value = value + (*s - '0');
-		if (value < 0)
-			return (sign == 1 ? -1 : 0);
-		s++;
-	}
-	return (value * sign);
 }

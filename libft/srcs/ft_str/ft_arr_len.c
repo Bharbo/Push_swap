@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_arr_len.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blanna <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: blanna <blanna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/11 16:44:41 by blanna            #+#    #+#             */
-/*   Updated: 2018/12/11 18:20:56 by blanna           ###   ########.fr       */
+/*   Created: 2019/05/16 13:22:41 by blanna            #+#    #+#             */
+/*   Updated: 2019/05/16 13:23:00 by blanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int		ft_arr_len(char **arr)
 {
-	while (*s1 == *s2 && n > 0 && *s1 != '\0')
-	{
-		s1++;
-		s2++;
-		n--;
-	}
-	if (n == 0)
-		return (0);
-	else
-		return ((unsigned char)*s1 - (unsigned char)*s2);
+	int		i;
+
+	i = 0;
+	while (arr[i])
+		i++;
+	return (i);
 }

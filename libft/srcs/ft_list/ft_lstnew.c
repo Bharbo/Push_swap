@@ -1,21 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: blanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/11 16:36:32 by blanna            #+#    #+#             */
-/*   Updated: 2018/12/11 17:00:22 by blanna           ###   ########.fr       */
+/*   Created: 2018/12/11 16:34:20 by blanna            #+#    #+#             */
+/*   Updated: 2018/12/15 18:51:07 by blanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isupper(int c)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (1);
+	t_list	*new;
+
+	if (!(new = (t_list *)malloc(sizeof(t_list))))
+		return (NULL);
+	if (content == NULL)
+	{
+		new->content = NULL;
+		new->content_size = 0;
+	}
 	else
-		return (0);
+	{
+		if (!(new->content = (t_list *)malloc(content_size)))
+			return (NULL);
+		ft_memcpy(new->content, content, content_size);
+		new->content_size = content_size;
+	}
+	new->next = NULL;
+	return (new);
 }

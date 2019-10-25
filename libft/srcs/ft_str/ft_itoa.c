@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-long int	abs_int(long int n)
+long int	abs_int(long long int n)
 {
 	if (n < 0)
 		return (-n);
@@ -20,7 +20,7 @@ long int	abs_int(long int n)
 		return (n);
 }
 
-static int	int_len(int n)
+static int	int_len(long long n)
 {
 	int len;
 
@@ -37,7 +37,7 @@ static int	int_len(int n)
 	return (len);
 }
 
-char		*ft_itoa(int n)
+char		*ft_itoa(long long n)
 {
 	char	*str;
 	int		len;
